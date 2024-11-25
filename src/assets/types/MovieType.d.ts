@@ -15,4 +15,5 @@ export default interface MediaItem {
     vote_average: number // Average vote rating
     vote_count: number // Total number of votes
     origin_country: string[] // List of origin countries
+    release_date: string
 }
