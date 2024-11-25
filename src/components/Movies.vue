@@ -10,8 +10,7 @@ const options = {
     url: 'https://api.themoviedb.org/3/trending/all/week?page=3&language=en-US',
     headers: {
         accept: 'application/json',
-        Authorization:
-            'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYTNlNjgzNDdiZTYxNjFjYTQ3MTVhNzVjOGJlZjNjNCIsIm5iZiI6MTczMjUzMjI1My44OTIwMTg4LCJzdWIiOiI2NzQ0NTc4MWMyNDc2NWZhMmYyZGUxYjgiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.L_gbyIKtXgmMgUqd8MWaWmuAl9d0d0i6OUoq00BWdSo',
+        Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
     },
 }
 

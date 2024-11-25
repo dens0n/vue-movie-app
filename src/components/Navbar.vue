@@ -3,7 +3,7 @@ import { Clapperboard } from 'lucide-vue-next'
 </script>
 <template>
     <nav
-        class="sticky top-0 z-10 flex w-full justify-between bg-gray-500/30 p-8 shadow-lg backdrop-blur-sm mb-8"
+        class="sticky top-0 z-50 flex w-full justify-between bg-gray-500/30 p-8 shadow-lg backdrop-blur-sm mb-8"
     >
         <Clapperboard :size="30" />
 
