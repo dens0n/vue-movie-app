@@ -1,0 +1,429 @@
+[
+    {
+        "backdrop_path": "/q8eejQcg1bAqImEV8jh8RtBD4uH.jpg",
+        "id": 94605,
+        "name": "Arcane",
+        "original_name": "Arcane",
+        "overview": "Amid the stark discord of twin cities Piltover and Zaun, two sisters fight on rival sides of a war between magic technologies and clashing convictions.",
+        "poster_path": "/abf8tHznhSvl9BAElD2cQeRr7do.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            16,
+            10765,
+            10759,
+            9648
+        ],
+        "popularity": 2437.141,
+        "first_air_date": "2021-11-06",
+        "vote_average": 8.8,
+        "vote_count": 4319,
+        "origin_country": [
+            "US"
+        ]
+    },
+    {
+        "backdrop_path": "/uVlUu174iiKhsUGqnOSy46eIIMU.jpg",
+        "id": 402431,
+        "title": "Wicked",
+        "original_title": "Wicked",
+        "overview": "Elphaba, a young woman misunderstood because of her green skin, and Glinda, a popular aristocrat gilded by privilege, become unlikely friends in the fantastical Land of Oz. As the two women struggle with their opposing personalities, their friendship is tested as both begin to fulfill their destinies as Glinda the Good and the Wicked Witch of the West.",
+        "poster_path": "/c5Tqxeo1UpBvnAc3csUm7j3hlQl.jpg",
+        "media_type": "movie",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            18,
+            14,
+            10749
+        ],
+        "popularity": 1485.249,
+        "release_date": "2024-11-20",
+        "video": false,
+        "vote_average": 7.9,
+        "vote_count": 160
+    },
+    {
+        "backdrop_path": "/4eMqcuVITc6iY25rRApqRFGr5VP.jpg",
+        "id": 896151,
+        "title": "Blitz",
+        "original_title": "Blitz",
+        "overview": "In World War II London, nine-year-old George is evacuated to the countryside by his mother, Rita, to escape the bombings. Defiant and determined to return to his family, George embarks on an epic, perilous journey back home as Rita searches for him.",
+        "poster_path": "/e9tyjbF2rugENtBolTtEhHOXgzD.jpg",
+        "media_type": "movie",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            10752,
+            18,
+            36
+        ],
+        "popularity": 125.434,
+        "release_date": "2024-11-01",
+        "video": false,
+        "vote_average": 5.21,
+        "vote_count": 50
+    },
+    {
+        "backdrop_path": "/fBClDP2SLBn4NlqYSMkZwky3VEp.jpg",
+        "id": 73982,
+        "name": "Day and Night",
+        "original_name": "白夜追凶",
+        "overview": "Twin brothers Guan Hongfeng and Guan Hongyu find themselves caught up in a brutal massacre that destroyed their family. As they face off against a shadowy criminal organization, they join forces with others to uncover the truth behind the 213 massacre.",
+        "poster_path": "/wVcpid3NW6UWPFeRhmO9PproG9Y.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "zh",
+        "genre_ids": [
+            80,
+            18,
+            9648
+        ],
+        "popularity": 125.963,
+        "first_air_date": "2017-08-30",
+        "vote_average": 8.4,
+        "vote_count": 36,
+        "origin_country": [
+            "CN"
+        ]
+    },
+    {
+        "backdrop_path": "/q3UGWifvIpdey1T2efX4dSmbZpU.jpg",
+        "id": 124364,
+        "name": "FROM",
+        "original_name": "FROM",
+        "overview": "Unravel the mystery of a nightmarish town in middle America that traps all those who enter. As the unwilling residents fight to keep a sense of normalcy and search for a way out, they must also survive the threats of the surrounding forest – including the terrifying creatures that come out when the sun goes down.",
+        "poster_path": "/cjXLrg4R7FRPFafvuQ3SSznQOd9.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            9648,
+            18,
+            10765
+        ],
+        "popularity": 2435.809,
+        "first_air_date": "2022-02-20",
+        "vote_average": 8.2,
+        "vote_count": 1474,
+        "origin_country": [
+            "US"
+        ]
+    },
+    {
+        "backdrop_path": "/n4ycOGj2tRLfINTJQ3wl0vNYqpR.jpg",
+        "id": 592983,
+        "title": "Spellbound",
+        "original_title": "Spellbound",
+        "overview": "When a powerful spell turns her parents into giant monsters, a teenage princess must journey into the wild to reverse the curse before it's too late.",
+        "poster_path": "/xFSIygDiX70Esp9dheCgGX0Nj77.jpg",
+        "media_type": "movie",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            16,
+            14,
+            10751,
+            12,
+            35
+        ],
+        "popularity": 331.827,
+        "release_date": "2024-11-22",
+        "video": false,
+        "vote_average": 6.9,
+        "vote_count": 52
+    },
+    {
+        "backdrop_path": "/lBoHzOgft2QfpjkVVvZCqeM4ttT.jpg",
+        "id": 90228,
+        "name": "Dune: Prophecy",
+        "original_name": "Dune: Prophecy",
+        "overview": "Ten thousand years before the ascension of Paul Atreides, sisters Valya and Tula Harkonnen establish the fabled sect and female order that would become known as the Bene Gesserit to control the future of humankind.",
+        "poster_path": "/5B8Cxz8ZZXp3w2WmmdKTXpkS24e.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            10765,
+            18,
+            10759
+        ],
+        "popularity": 1378.964,
+        "first_air_date": "2024-11-17",
+        "vote_average": 8.3,
+        "vote_count": 60,
+        "origin_country": [
+            "US"
+        ]
+    },
+    {
+        "backdrop_path": "/tElnmtQ6yz1PjN1kePNl8yMSb59.jpg",
+        "id": 1241982,
+        "title": "Moana 2",
+        "original_title": "Moana 2",
+        "overview": "After receiving an unexpected call from her wayfinding ancestors, Moana journeys alongside Maui and a new crew to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced.",
+        "poster_path": "/m0SbwFNCa9epW1X60deLqTHiP7x.jpg",
+        "media_type": "movie",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            16,
+            12,
+            10751,
+            35
+        ],
+        "popularity": 1268.378,
+        "release_date": "2024-11-27",
+        "video": false,
+        "vote_average": 8.4,
+        "vote_count": 14
+    },
+    {
+        "backdrop_path": "/euYIwmwkmz95mnXvufEmbL6ovhZ.jpg",
+        "id": 558449,
+        "title": "Gladiator II",
+        "original_title": "Gladiator II",
+        "overview": "Years after witnessing the death of the revered hero Maximus at the hands of his uncle, Lucius is forced to enter the Colosseum after his home is conquered by the tyrannical Emperors who now lead Rome with an iron fist. With rage in his heart and the future of the Empire at stake, Lucius must look to his past to find strength and honor to return the glory of Rome to its people.",
+        "poster_path": "/2cxhvwyEwRlysAmRH4iodkvo0z5.jpg",
+        "media_type": "movie",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            28,
+            12,
+            18
+        ],
+        "popularity": 2139.537,
+        "release_date": "2024-11-13",
+        "video": false,
+        "vote_average": 6.8,
+        "vote_count": 663
+    },
+    {
+        "backdrop_path": "/zpaodBqO2lcwJh2SQrFFf1Rn8Jy.jpg",
+        "id": 1100099,
+        "title": "We Live in Time",
+        "original_title": "We Live in Time",
+        "overview": "An up-and-coming chef and a recent divorcée find their lives forever changed when a chance encounter brings them together, in a decade-spanning, deeply moving romance.",
+        "poster_path": "/oeDNBgnlGF6rnyX1P1K8Vl2f3lW.jpg",
+        "media_type": "movie",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            10749,
+            18,
+            35
+        ],
+        "popularity": 438.946,
+        "release_date": "2024-10-10",
+        "video": false,
+        "vote_average": 7.7,
+        "vote_count": 72
+    },
+    {
+        "backdrop_path": "/iR79ciqhtaZ9BE7YFA1HpCHQgX4.jpg",
+        "id": 1100782,
+        "title": "Smile 2",
+        "original_title": "Smile 2",
+        "overview": "About to embark on a new world tour, global pop sensation Skye Riley begins experiencing increasingly terrifying and inexplicable events. Overwhelmed by the escalating horrors and the pressures of fame, Skye is forced to face her dark past to regain control of her life before it spirals out of control.",
+        "poster_path": "/ht8Uv9QPv9y7K0RvUyJIaXOZTfd.jpg",
+        "media_type": "movie",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            27,
+            9648
+        ],
+        "popularity": 2711.905,
+        "release_date": "2024-10-16",
+        "video": false,
+        "vote_average": 6.878,
+        "vote_count": 615
+    },
+    {
+        "backdrop_path": "/kLyhimpFheH1Z2w6nW1n6qWcGAC.jpg",
+        "id": 1097870,
+        "title": "Dear Santa",
+        "original_title": "Dear Santa",
+        "overview": "Likeable 6th grader Liam writes to Santa asking him to prove that he's real. But Liam is dyslexic and accidentally sends his letter to Satan instead, who shows up at Liam's house, excited to have his first fanboy letter and wanting a little of Liam's soul.",
+        "poster_path": "/fRbDHbGBXg6kwQYr3CRYeKPJW5q.jpg",
+        "media_type": "movie",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            35,
+            14
+        ],
+        "popularity": 43.531,
+        "release_date": "2024-11-24",
+        "video": false,
+        "vote_average": 9,
+        "vote_count": 2
+    },
+    {
+        "backdrop_path": null,
+        "id": 95421,
+        "name": "The Life of White Fox",
+        "original_name": "白狐的人生",
+        "overview": "A fox demon cultivates behind closed doors through the help of the spirit pearl. With only a few days left until he completes his training, an unexpected encounter ruins everything. The fox is mistaken for a Samoyed and sent to the vet while the spirit pearl falls into the hands of the young woman who recklessly barged in. After tripping over and falling on top of the fox demon, Xia Kui comes into the possession of the spirit pearl and plans to sell it on her Taobao shop as a fake antique item. Wanting to get his precious pearl back, fox demon Bai Xiao chases Xiao Kui all the way to her house only to discover that the spirit pearl has acknowledged her as its new owner. Intending to kill her to retrieve what's his, Bai Xiao is momentarily distracted by the smell of the red braised pork belly that Xia Kui has cooked. Opening his eyes to the new world around him, Bai Xiao discovers many interesting inventions. As it turns out, Bai Xiao is a fox demon from the Tang Dynasty who woke up one day to realize that the times have changed. Xia Kui convinces Bai Xiao to let her live for a few more days so that she can finally confess her feelings to her crush. Their arrangement forces Xia Kui and Bai Xiao to live together. Unbeknownst to them, the spirit pearl's reappearance has attracted the attention of dangerous creatures looking to steal the pearl for their own gain.  Adapted from a novel of the same name by Jiu Ye Hui.",
+        "poster_path": "/wVZKhFZFBWZRXHet9p09ZNsWRHC.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "zh",
+        "genre_ids": [
+            10765,
+            35
+        ],
+        "popularity": 13.684,
+        "first_air_date": "2019-11-04",
+        "vote_average": 0,
+        "vote_count": 0,
+        "origin_country": [
+            "CN"
+        ]
+    },
+    {
+        "backdrop_path": "/i3CAo9UMGsvlU9k3Svd63rRDeZx.jpg",
+        "id": 1064486,
+        "title": "Memoir of a Snail",
+        "original_title": "Memoir of a Snail",
+        "overview": "In 1970s Australia, Grace's life is troubled by misfortune and loss. After their mother dies during pregnancy, she and her twin brother, Gilbert, are raised by their paraplegic-alcoholic former juggler father, Percy. Despite a life filled with love, tragedy strikes anew when Percy passes away in his sleep. The siblings are forcibly separated and thrust into separate homes.",
+        "poster_path": "/lWh5OlerPR1c1cfn1ZLq0lpqFds.jpg",
+        "media_type": "movie",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            16,
+            18
+        ],
+        "popularity": 29.693,
+        "release_date": "2024-10-17",
+        "video": false,
+        "vote_average": 8.6,
+        "vote_count": 8
+    },
+    {
+        "backdrop_path": "/thDLoKyWdgK6EWXwGsjYqAFenuN.jpg",
+        "id": 1182387,
+        "title": "Armor",
+        "original_title": "Armor",
+        "overview": "Armored truck security guard James Brody is working with his son Casey transporting millions of dollars between banks when a team of thieves led by Rook orchestrate a takeover of their truck to seize the riches. Following a violent car chase, Rook soon has the armored truck surrounded and James and Casey find themselves cornered onto a decrepit bridge.",
+        "poster_path": "/pnXLFioDeftqjlCVlRmXvIdMsdP.jpg",
+        "media_type": "movie",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            28,
+            80,
+            53
+        ],
+        "popularity": 96.849,
+        "release_date": "2024-10-30",
+        "video": false,
+        "vote_average": 4.9,
+        "vote_count": 9
+    },
+    {
+        "backdrop_path": "/mI7fNHGhVhqxS6OrkHj6GZqIetu.jpg",
+        "id": 971606,
+        "title": "Out of My Mind",
+        "original_title": "Out of My Mind",
+        "overview": "Melody Brooks, a sixth grader with cerebral palsy, has a quick wit and a sharp mind, but because she is non-verbal and uses a wheelchair, she is not given the same opportunities as her classmates. When a young educator notices her student's untapped potential and Melody starts to participate in mainstream education, Melody shows that what she has to say is more important than how she says it.",
+        "poster_path": "/o8qtMeCskitW5QwSu6O1nP4jN6z.jpg",
+        "media_type": "movie",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            18
+        ],
+        "popularity": 47.531,
+        "release_date": "2024-01-19",
+        "video": false,
+        "vote_average": 7.7,
+        "vote_count": 17
+    },
+    {
+        "backdrop_path": "/r0Zg70jpcDAD7IMDhVqajSnG9vb.jpg",
+        "id": 113962,
+        "name": "Lioness",
+        "original_name": "Lioness",
+        "overview": "Cruz Manuelos, a rough-around-the-edges but passionate young Marine, is recruited to join the CIA's Lioness Engagement Team to help bring down a terrorist organization from within. Joe, the station chief of the Lioness program, is tasked with training, managing and leading her female undercover operatives.",
+        "poster_path": "/ajaXSmdAlYYhnvx1EIsvpfN949y.jpg",
+        "media_type": "tv",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            18,
+            10768
+        ],
+        "popularity": 751.013,
+        "first_air_date": "2023-07-23",
+        "vote_average": 8,
+        "vote_count": 733,
+        "origin_country": [
+            "US"
+        ]
+    },
+    {
+        "backdrop_path": "/v9acaWVVFdZT5yAU7J2QjwfhXyD.jpg",
+        "id": 1184918,
+        "title": "The Wild Robot",
+        "original_title": "The Wild Robot",
+        "overview": "After a shipwreck, an intelligent robot called Roz is stranded on an uninhabited island. To survive the harsh environment, Roz bonds with the island's animals and cares for an orphaned baby goose.",
+        "poster_path": "/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg",
+        "media_type": "movie",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            16,
+            878,
+            10751
+        ],
+        "popularity": 2542.661,
+        "release_date": "2024-09-12",
+        "video": false,
+        "vote_average": 8.458,
+        "vote_count": 3079
+    },
+    {
+        "backdrop_path": "/ytorq8y3v9g1P4sXDFv2tbNg7Ms.jpg",
+        "id": 804406,
+        "title": "The Piano Lesson",
+        "original_title": "The Piano Lesson",
+        "overview": "A brother and sister's battle over a prized heirloom piano unleashes haunting truths about how the past is perceived — and who defines a family legacy.",
+        "poster_path": "/cgampq63AqCrza6bnvmWqCcvCzY.jpg",
+        "media_type": "movie",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            18
+        ],
+        "popularity": 51.45,
+        "release_date": "2024-11-07",
+        "video": false,
+        "vote_average": 5.9,
+        "vote_count": 16
+    },
+    {
+        "backdrop_path": "/7h6TqPB3ESmjuVbxCxAeB1c9OB1.jpg",
+        "id": 933260,
+        "title": "The Substance",
+        "original_title": "The Substance",
+        "overview": "A fading celebrity decides to use a black market drug, a cell-replicating substance that temporarily creates a younger, better version of herself.",
+        "poster_path": "/lqoMzCcZYEFK729d6qzt349fB4o.jpg",
+        "media_type": "movie",
+        "adult": false,
+        "original_language": "en",
+        "genre_ids": [
+            18,
+            27,
+            878
+        ],
+        "popularity": 1348.076,
+        "release_date": "2024-09-07",
+        "video": false,
+        "vote_average": 7.3,
+        "vote_count": 2179
+    }
+]
