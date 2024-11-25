@@ -1,28 +1,74 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import axios from 'axios'
 import type MediaItem from '@/assets/types/MovieType'
 import MovieModal from './MovieModal.vue'
 import MovieCard from './MovieCard.vue'
+import Pagination from './Pagination.vue'
+import Loader from './Loader.vue'
 
-const options = {
+const props = defineProps<{
+    searchQuery: string
+    selectedCategory: string
+}>()
+
+const options = ref({
     method: 'GET',
-    url: 'https://api.themoviedb.org/3/trending/all/week?page=3&language=en-US',
+    url: 'https://api.themoviedb.org/3/trending/all/week',
     headers: {
         accept: 'application/json',
         Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
     },
-}
+})
 
 const movies = ref<MediaItem[]>([])
+const totalPages = ref<number>(0)
 const selectedMovie = ref<MediaItem | null>(null)
+const currentPage = ref<number>(1) // Start page
+const isLoading = ref<boolean>(true)
 
-function selectMovie(movie: MediaItem) {
+const selectMovie = (movie: MediaItem) => {
     selectedMovie.value = selectedMovie.value === movie ? null : movie
 }
 
-function closeModal() {
+const closeModal = () => {
     selectedMovie.value = null
+}
+
+async function fetchData() {
+    try {
+        console.log(props.selectedCategory)
+
+        isLoading.value = true
+        let url = ''
+        if (props.searchQuery) {
+            url = `https://api.themoviedb.org/3/search/multi?query=${encodeURIComponent(props.searchQuery)}&include_adult=false&language=en-US&page=${currentPage.value}`
+        } else {
+            switch (props.selectedCategory) {
+                case 'top_rated':
+                    url = `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${currentPage.value}`
+                    break
+                case 'upcoming':
+                    url = `https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${currentPage.value}`
+                    break
+                case 'popular':
+                    url = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${currentPage.value}`
+                    break
+                default:
+                    url = `https://api.themoviedb.org/3/trending/all/week?page=${currentPage.value}&language=en-US`
+                    break
+            }
+        }
+        options.value.url = url
+        const res = await axios.request(options.value)
+        const data = res.data
+        movies.value = data.results
+        totalPages.value = data.total_pages
+    } catch (err) {
+        console.log(err)
+    } finally {
+        isLoading.value = false
+    }
 }
 
 watch(selectedMovie, (newVal) => {
@@ -38,32 +84,51 @@ watch(selectedMovie, (newVal) => {
         document.body.style.paddingRight = ''
     }
 })
-
-async function fetchData() {
-    try {
-        const res = await axios.request(options)
-        const data = res.data
-        console.log(data)
-        movies.value = data.results
-        console.log(movies.value)
-    } catch (err) {
-        console.log(err)
+watch(isLoading, (newVal) => {
+    if (newVal) {
+        // När isLoading är true, stänger vi modalen och gör sidan oåtkomlig
+        selectedMovie.value = null
+        document.body.style.overflow = 'hidden'
+    } else {
+        // När isLoading är false, återställer vi sidan till normalt läge
+        document.body.style.overflow = ''
     }
-}
+})
+
+watch(
+    () => props.selectedCategory,
+    () => {
+        console.log('Fetching data for category:', props.selectedCategory)
+        fetchData()
+    },
+)
+
+// Fetch data when the currentPage changes
+watch(currentPage, () => {
+    fetchData()
+})
+
+// Initial fetch when component mounts
+onMounted(() => {
+    fetchData()
+})
 </script>
 
 <template>
-    <main class="container z-0 mx-auto min-h-screen">
+    <main class="container relative z-0 mx-auto min-h-screen">
+        <div v-if="isLoading">
+            <Loader />
+        </div>
+
         <!-- MODAL -->
         <MovieModal :movie="selectedMovie" @close="closeModal" />
         <!-- CARDS -->
         <MovieCard :movies="movies" @select="selectMovie" />
-
-        <button
-            @click="fetchData"
-            class="mx-auto mt-10 block rounded-lg bg-blue-500 px-6 py-2 font-bold text-white hover:bg-blue-600"
-        >
-            Fetch Data
-        </button>
+        <!-- PAGINATION -->
+        <Pagination
+            :totalPages="totalPages"
+            :currentPage="currentPage"
+            @update:currentPage="currentPage = $event"
+        />
     </main>
 </template>
