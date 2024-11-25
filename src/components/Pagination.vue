@@ -1,26 +1,35 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, defineProps, defineEmits } from 'vue'
 
-const totalPages = 500 // Antal sidor
-const currentPage = ref(1)
+const props = defineProps<{
+    totalPages: number
+    currentPage: number
+}>()
+
+const emit = defineEmits<{
+    (e: 'update:currentPage', page: number): void
+}>()
+
+const currentPage = ref(props.currentPage)
 
 function goToPage(page: number) {
-    if (page >= 1 && page <= totalPages) {
+    if (page >= 1 && page <= props.totalPages) {
         currentPage.value = page
+        emit('update:currentPage', currentPage.value) // Skicka den nya sidan till föräldern
     }
 }
 
 const pagination = computed(() => {
-    const maxVisible = 9 // Max antal synliga sidor (inklusive punkter)
+    const maxVisible = 4
     const pages: (number | string)[] = []
 
-    if (totalPages <= maxVisible) {
-        for (let i = 1; i <= totalPages; i++) {
+    if (props.totalPages <= maxVisible) {
+        for (let i = 1; i <= props.totalPages; i++) {
             pages.push(i)
         }
     } else {
         const start = Math.max(1, currentPage.value - 3)
-        const end = Math.min(totalPages, currentPage.value + 3)
+        const end = Math.min(props.totalPages, currentPage.value + 3)
 
         if (start > 1) {
             pages.push(1)
@@ -31,9 +40,9 @@ const pagination = computed(() => {
             pages.push(i)
         }
 
-        if (end < totalPages) {
-            if (end < totalPages - 1) pages.push('...')
-            pages.push(totalPages)
+        if (end < props.totalPages) {
+            if (end < props.totalPages - 1) pages.push('...')
+            pages.push(props.totalPages)
         }
     }
 
@@ -42,8 +51,7 @@ const pagination = computed(() => {
 </script>
 
 <template>
-    <div class="flex items-center space-x-1">
-        <!-- Föregående -->
+    <div class="my-14 flex items-center justify-center space-x-1 pb-10">
         <button
             @click="goToPage(currentPage - 1)"
             :disabled="currentPage === 1"
@@ -52,7 +60,6 @@ const pagination = computed(() => {
             Prev
         </button>
 
-        <!-- Sidnummer -->
         <button
             v-for="page in pagination"
             :key="page"
@@ -69,10 +76,9 @@ const pagination = computed(() => {
             {{ page }}
         </button>
 
-        <!-- Nästa -->
         <button
             @click="goToPage(currentPage + 1)"
-            :disabled="currentPage === totalPages"
+            :disabled="currentPage === props.totalPages"
             class="ml-2 rounded-full border border-slate-300 px-3 py-2 text-center text-sm text-slate-600 shadow-sm transition-all hover:border-slate-800 hover:bg-slate-800 hover:text-white hover:shadow-lg focus:border-slate-800 focus:bg-slate-800 focus:text-white active:border-slate-800 active:bg-slate-800 active:text-white disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         >
             Next
