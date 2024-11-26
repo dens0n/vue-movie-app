@@ -1,16 +1,21 @@
 <script setup lang="ts">
 import { ref, defineEmits } from 'vue'
+import { Clapperboard, Search } from 'lucide-vue-next'
+import type { category } from '@/assets/types/MovieType'
 
-const emit = defineEmits(['search', 'categoryChange']);
-const searchQuery = ref('');
+const emit = defineEmits(['search', 'category-change'])
+const searchQuery = ref<string>('')
 
-const updateSearch = () => {
-    emit('search', searchQuery.value);
+// Sökning triggas vid form-submission
+const handleSearch = (event: Event) => {
+    event.preventDefault() // Förhindra sidladdning
+    emit('search', searchQuery.value)
+    searchQuery.value = ''
 }
 
-const selectCategory = (category: string) => {
-    console.log(`Selected category: ${category}`);
-    emit('categoryChange', category);
+const selectCategory = (category: category) => {
+    console.log(`Selected category: ${category}`)
+    emit('category-change', category)
 }
 </script>
 
@@ -48,20 +53,20 @@ const selectCategory = (category: string) => {
             </div>
 
             <!-- Search Bar -->
-            <div class="relative">
+            <form @submit="handleSearch" class="relative">
                 <input
                     type="text"
                     placeholder="Search movies..."
                     v-model="searchQuery"
-                    @input="updateSearch"
                     class="w-80 rounded-full bg-gray-700 px-4 py-2 text-white placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
-                <div
+                <button
+                    type="submit"
                     class="absolute right-1 top-1/2 -translate-y-1/2 transform p-2 text-gray-300 hover:cursor-pointer"
                 >
                     <Search :size="19" />
-                </div>
-            </div>
+                </button>
+            </form>
         </div>
     </nav>
 </template>
