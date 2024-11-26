@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue'
 import { X } from 'lucide-vue-next'
-import type MediaItem from '@/assets/types/MovieType'
+import type { MediaItem } from '@/assets/types/MovieType'
 
 // Props som modalen behöver
 defineProps<{
