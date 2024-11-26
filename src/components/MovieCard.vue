@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue'
 import type { MediaItem } from '@/assets/types/MovieType'
+import { Star } from 'lucide-vue-next'
 
 defineProps<{
     movies: MediaItem[]
 }>()
 
 defineEmits(['select'])
+
+const addToFavorites = (movie: MediaItem) => {
+    console.log('add to fav:', movie)
+}
 </script>
 <template>
     <div
@@ -16,7 +21,7 @@ defineEmits(['select'])
             v-for="movie in movies"
             :key="movie.id"
             @click="$emit('select', movie)"
-            class="hover:z-1 group relative flex transform cursor-pointer flex-col items-center overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105"
+            class="hover:z-1 group relative flex transform cursor-pointer flex-col items-center overflow-hidden rounded-lg bg-white p-1 shadow-lg transition-transform hover:scale-105"
         >
             <img
                 :src="
@@ -30,6 +35,12 @@ defineEmits(['select'])
             <div
                 class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black to-transparent px-2 py-5 opacity-0 transition-opacity group-hover:opacity-100"
             >
+                <button
+                    @click.stop="addToFavorites(movie)"
+                    class="fixed right-5 top-5 z-20"
+                >
+                    <Star color="orange" :size="30" fill="transparent" />
+                </button>
                 <h3 class="p-2 text-center text-lg font-semibold text-white">
                     {{ movie.name || movie.title }}
                 </h3>
