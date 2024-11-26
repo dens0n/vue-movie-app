@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Navbar from './components/Navbar.vue'
-import Movies from './components/Movies.vue'
 import { ref } from 'vue'
 import type { category } from './assets/types/MovieType'
 
@@ -20,7 +19,7 @@ const updateCategory = (category: category) => {
 
 <template>
     <Navbar @search="updateSearchQuery" @category-change="updateCategory" />
-    <Movies
+    <router-view
         v-model:searchQuery="searchQuery"
         :selectedCategory="selectedCategory"
     />
