@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue'
-import type MediaItem from '@/assets/types/MovieType'
+import type { MediaItem } from '@/assets/types/MovieType'
 
 defineProps<{
     movies: MediaItem[]
@@ -10,7 +10,7 @@ defineEmits(['select'])
 </script>
 <template>
     <div
-        class="z-2 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+        class="z-2 mb-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
     >
         <div
             v-for="movie in movies"
@@ -25,7 +25,7 @@ defineEmits(['select'])
                         : '/placeholder.jpg'
                 "
                 alt="Poster"
-                class="h-auto w-full rounded-lg object-cover"
+                class="h-full w-auto rounded-lg object-cover"
             />
             <div
                 class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black to-transparent px-2 py-5 opacity-0 transition-opacity group-hover:opacity-100"
@@ -35,8 +35,8 @@ defineEmits(['select'])
                 </h3>
                 <p class="px-2 pb-2 text-center text-sm text-white">
                     {{
-                        movie.overview.slice(0, 100) +
-                        (movie.overview.length > 100 ? '...' : '')
+                        movie.overview?.slice(0, 100) +
+                        (movie.overview?.length > 100 ? '...' : '')
                     }}
                 </p>
             </div>
