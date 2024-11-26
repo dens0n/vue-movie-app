@@ -1,4 +1,4 @@
-export default interface MediaItem {
+export interface MediaItem {
     backdrop_path: string // Path to the backdrop image
     id: number // Unique identifier for the media item
     name?: string // Name of the media item
@@ -17,3 +17,5 @@ export default interface MediaItem {
     origin_country: string[] // List of origin countries
     release_date: string
 }
+
+export type category = 'top_rated' | 'upcoming' | 'popular' | 'trending'
