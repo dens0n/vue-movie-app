@@ -1,21 +1,30 @@
 <script setup lang="ts">
 import { ref, defineEmits } from 'vue'
 import { Clapperboard, Search } from 'lucide-vue-next'
+import { useRouter } from 'vue-router'
 import type { category } from '@/assets/types/MovieType'
 
 const emit = defineEmits(['search', 'category-change'])
 const searchQuery = ref<string>('')
+const selectedCategory = ref<category | null | 'favorites'>(null)
+const router = useRouter()
 
-// Sökning triggas vid form-submission
 const handleSearch = (event: Event) => {
-    event.preventDefault() // Förhindra sidladdning
+    event.preventDefault()
     emit('search', searchQuery.value)
     searchQuery.value = ''
 }
 
-const selectCategory = (category: category) => {
+const selectCategory = (category: category | 'favorites') => {
+    if (category === 'favorites') {
+        selectedCategory.value = category
+        return
+    }
+
+    selectedCategory.value = category
     console.log(`Selected category: ${category}`)
     emit('category-change', category)
+    router.push('/') // Navigera till startsidan
 }
 </script>
 
@@ -26,7 +35,10 @@ const selectCategory = (category: category) => {
         <div
             class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
         >
-            <a href="" class="flex items-center space-x-3 text-white">
+            <a
+                @click.prevent="router.push('/')"
+                class="flex items-center space-x-3 text-white hover:cursor-pointer"
+            >
                 <Clapperboard :size="30" :stroke-width="2" class="text-white" />
                 <span class="text-2xl font-semibold">Movie</span>
             </a>
@@ -34,22 +46,50 @@ const selectCategory = (category: category) => {
             <div class="hidden gap-6 sm:flex">
                 <button
                     @click="selectCategory('top_rated')"
-                    class="text-white transition duration-200 hover:text-gray-300"
+                    :class="
+                        selectedCategory === 'top_rated'
+                            ? 'text-blue-500 hover:text-blue-400'
+                            : 'text-white hover:text-gray-300'
+                    "
+                    class="text-white transition duration-200 hover:text-gray-300 active:text-blue-500"
                 >
                     Top Rated
                 </button>
                 <button
                     @click="selectCategory('upcoming')"
-                    class="text-white transition duration-200 hover:text-gray-300"
+                    :class="
+                        selectedCategory === 'upcoming'
+                            ? 'text-blue-500 hover:text-blue-400'
+                            : 'text-white hover:text-gray-300'
+                    "
+                    class="text-white transition duration-200 hover:text-gray-300 active:text-blue-500"
                 >
                     Upcoming
                 </button>
                 <button
                     @click="selectCategory('popular')"
-                    class="text-white transition duration-200 hover:text-gray-300"
+                    :class="
+                        selectedCategory === 'popular'
+                            ? 'text-blue-500 hover:text-blue-400'
+                            : 'text-white hover:text-gray-300'
+                    "
+                    class="text-white transition duration-200 hover:text-gray-300 active:text-blue-500"
                 >
                     Popular
                 </button>
+                <router-link
+                    to="/favorites"
+                    @click.prevent="selectCategory('favorites')"
+                    :class="
+                        selectedCategory === 'favorites'
+                            ? 'text-blue-500 hover:text-blue-400'
+                            : 'text-white hover:text-gray-300'
+                    "
+                    class="transition duration-200"
+                >
+                    Favoriter
+                </router-link>
+                >
             </div>
 
             <!-- Search Bar -->
