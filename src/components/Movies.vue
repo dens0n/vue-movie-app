@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue'
+import { ref, watch, onMounted, defineEmits } from 'vue'
 import axios from 'axios'
-import type MediaItem from '@/assets/types/MovieType'
+import type { category, MediaItem } from '@/assets/types/MovieType'
 import MovieModal from './MovieModal.vue'
 import MovieCard from './MovieCard.vue'
-import Pagination from './Pagination.vue'
+// import Pagination from './Pagination.vue'
 import Loader from './Loader.vue'
 
 const props = defineProps<{
     searchQuery: string
-    selectedCategory: string
+    selectedCategory: category
 }>()
+const emit = defineEmits(['update:searchQuery'])
 
 const options = ref({
     method: 'GET',
@@ -22,9 +23,7 @@ const options = ref({
 })
 
 const movies = ref<MediaItem[]>([])
-const totalPages = ref<number>(0)
 const selectedMovie = ref<MediaItem | null>(null)
-const currentPage = ref<number>(1) // Start page
 const isLoading = ref<boolean>(true)
 
 const selectMovie = (movie: MediaItem) => {
@@ -37,37 +36,50 @@ const closeModal = () => {
 
 async function fetchData() {
     try {
-        console.log(props.selectedCategory)
+        console.log('Fetching data with searchQuery:', props.searchQuery)
+        console.log(
+            'Fetching data with selectedCategory:',
+            props.selectedCategory,
+        )
 
         isLoading.value = true
         let url = ''
         if (props.searchQuery) {
-            url = `https://api.themoviedb.org/3/search/multi?query=${encodeURIComponent(props.searchQuery)}&include_adult=false&language=en-US&page=${currentPage.value}`
+            url = `https://api.themoviedb.org/3/search/movie?query=${props.searchQuery}&include_adult=false&language=en-US`
         } else {
             switch (props.selectedCategory) {
                 case 'top_rated':
-                    url = `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${currentPage.value}`
+                    url = `https://api.themoviedb.org/3/movie/top_rated?language=en-US`
                     break
                 case 'upcoming':
-                    url = `https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${currentPage.value}`
+                    url = `https://api.themoviedb.org/3/movie/upcoming?language=en-US&region=US`
                     break
                 case 'popular':
-                    url = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${currentPage.value}`
+                    url = `https://api.themoviedb.org/3/movie/popular?language=en-US`
                     break
                 default:
-                    url = `https://api.themoviedb.org/3/trending/all/week?page=${currentPage.value}&language=en-US`
+                    url = `https://api.themoviedb.org/3/trending/movie/week?language=en-US`
                     break
             }
         }
         options.value.url = url
+        console.log('Final URL:', options.value.url)
+
         const res = await axios.request(options.value)
         const data = res.data
+        console.log('API Response:', data)
+
         movies.value = data.results
-        totalPages.value = data.total_pages
     } catch (err) {
-        console.log(err)
+        console.error('Error fetching data:', err)
     } finally {
         isLoading.value = false
+
+        // Kontrollera att `emit` körs
+        if (props.searchQuery) {
+            console.log('Resetting searchQuery to empty string.')
+            emit('update:searchQuery', '')
+        }
     }
 }
 
@@ -96,6 +108,16 @@ watch(isLoading, (newVal) => {
 })
 
 watch(
+    () => props.searchQuery,
+    () => {
+        if (props.searchQuery) {
+            console.log('Fetching data for search:', props.searchQuery)
+            fetchData()
+        }
+    },
+)
+
+watch(
     () => props.selectedCategory,
     () => {
         console.log('Fetching data for category:', props.selectedCategory)
@@ -103,12 +125,6 @@ watch(
     },
 )
 
-// Fetch data when the currentPage changes
-watch(currentPage, () => {
-    fetchData()
-})
-
-// Initial fetch when component mounts
 onMounted(() => {
     fetchData()
 })
@@ -123,12 +139,12 @@ onMounted(() => {
         <!-- MODAL -->
         <MovieModal :movie="selectedMovie" @close="closeModal" />
         <!-- CARDS -->
-        <MovieCard :movies="movies" @select="selectMovie" />
+        <MovieCard :movies="movies || []" @select="selectMovie" />
         <!-- PAGINATION -->
-        <Pagination
+        <!-- <Pagination
             :totalPages="totalPages"
             :currentPage="currentPage"
             @update:currentPage="currentPage = $event"
-        />
+        /> -->
     </main>
 </template>
