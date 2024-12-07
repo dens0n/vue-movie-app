@@ -1,33 +1,53 @@
-# .
+# Vue Movie App
 
-This template should help get you started developing with Vue 3 in Vite.
+En filmapplikation byggd med Vue 3, TypeScript och Tailwind CSS som använder TMDB API för att visa och hantera filmer.
 
-## Recommended IDE Setup
+## Funktionalitet
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### Huvudfunktioner
+- Visa trendande filmer
+- Sök efter specifika filmer
+- Filtrera filmer efter kategorier (Top Rated, Upcoming, Popular)
+- Spara favoritfilmer lokalt
+- Detaljerad filmvisning i modal
 
-## Type Support for `.vue` Imports in TS
+### Komponenter
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+#### Movies.vue
+- Huvudkomponent som hanterar filmvisning
+- Hämtar filmdata från TMDB API
+- Hanterar sökningar och kategorifiltrering
+- Visar laddningsindikator under API-anrop
 
-## Customize configuration
+#### MovieCard.vue
+- Visar individuella filmkort med poster och grundläggande information
+- Hanterar favorit-funktionalitet
+- Visar hover-effekt med mer information
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+#### MovieModal.vue
+- Visar detaljerad information om en vald film
+- Inkluderar poster, beskrivning, betyg och releasedata
+- Kan stängas via kryss-ikon eller klick utanför modalen
 
-## Project Setup
+#### Navbar.vue
+- Navigeringsmeny med sökfunktion
+- Kategorival (Top Rated, Upcoming, Popular)
+- Länk till favoritsida
 
-```sh
-npm install
-```
+#### Favorites.vue
+- Visar sparade favoritfilmer
+- Hämtar data från localStorage
+- Använder samma MovieCard-komponent som huvudvyn
 
-### Compile and Hot-Reload for Development
+## Teknisk Stack
+- Vue 3 med Composition API
+- TypeScript för typsäkerhet
+- Tailwind CSS för styling
+- Axios för API-anrop
+- Vue Router för navigation
+- TMDB API för filmdata
 
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
+## Datahantering
+- Film-data hämtas från TMDB API
+- Favoriter sparas i localStorage
+- Sökningar och kategorifilter uppdaterar vyn dynamiskt
